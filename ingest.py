@@ -53,9 +53,13 @@ for filename in os.listdir(DOCS_FOLDER):
         text = f.read()
 
     # Step 1: DELETE old chunks for this file
-    print("⚡ Deleting old data from Pinecone...")
-    index.delete(filter={"source": filename})
-
+    
+    try:
+        print("⚡ Deleting old data from Pinecone...")
+        index.delete(filter={"source": filename})
+    except Exception as e:
+        print("⚠️ No existing data to delete (first run)")
+        
     # Step 2: Chunk
     chunks = chunk_text(text)
     print(f"🔹 Created {len(chunks)} chunks")
