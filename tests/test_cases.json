@@ -1,0 +1,10 @@
+[
+  {
+    "question": "What are employee benefits?",
+    "expected_keywords": ["health", "insurance", "leave"]
+  },
+  {
+    "question": "What is leave policy?",
+    "expected_keywords": ["leave", "paid"]
+  }
+]
