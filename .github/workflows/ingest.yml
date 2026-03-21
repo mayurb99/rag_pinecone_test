@@ -2,6 +2,8 @@ name: Ingest to Pinecone
 
 on:
   push:
+    branches:
+      - "feature/**" 
     paths:
       - "docs/**"
 
