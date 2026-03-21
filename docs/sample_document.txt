@@ -8,7 +8,6 @@ First Day:
 - Meet your team lead
 
 
-
 First Week:
 - Complete security training
 - Set up your development environment
