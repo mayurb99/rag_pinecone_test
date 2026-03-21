@@ -1,8 +1,9 @@
 name: RAG Evaluation
 
 on:
-  pull_request:
-    branches: [ main ]
+  push:
+    branches:
+      - "main"
 
 jobs:
   evaluate:
@@ -17,10 +18,9 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - name: Run Evaluation
+      
+      
+      - name: Run Main App
         env:
-          PINECONE_API_KEY: ${{ secrets.PINECONE_API_KEY }}
           HUGGINGFACEHUB_API_TOKEN: ${{ secrets.HUGGINGFACEHUB_API_TOKEN }}
-        run: python evaluate.py
-      
-      
+        run: python main.py
